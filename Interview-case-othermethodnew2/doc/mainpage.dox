@@ -1,0 +1,43 @@
+/**
+@mainpage Interview case
+
+@section design Design explanation
+
+First, two channels(ADC_CHANNEL0 and ADC_CHANNEL1) are initialized to check whether the
+channels was initialized successfully or not. Then to pedal angle data between 0 and 30 degrees
+is created randomly in a while loop , artificially an error is created in every 5 loop and
+corresponding adc1, adc2 in voltages are calculated from the formula given in read.me that
+states the relation between the analog signal and pedal angle.
+
+Adc1 and adc2 are checked if they are in the limits and returned their status. These analog
+signals are converted to digital. After that using adc_read_set_output and adc_read, this
+channels are set and read.
+
+Analog ADC value is filtered using moving average filter for a selected channel.
+After filtering, Adc1 and adc2 are checked again if they are in the limits and returned their status.
+Note: as the array that holds filtered analog ADC values is empty in the beginning , the error led may be
+ON for two iterations. It can be skipped.
+Then by checking the ADC_RET_STATUS for both channels, it is declared that operation on one channel
+or possibly two channels are unsuccessful. The error led is ON. Do not calculate torque because
+operation is not successful.
+
+If the operation is successful, pedal angle and pedal angle percentage are calculated for filtered analog ADC value.
+The torque is calculated and printed to the screen in the last step.
+
+
+<!-- If you know plantUML and you have it installed (maybe adapt PLANTUML_JAR_PATH
+  in Doxyfile if it's not at `/usr/share/plantuml`) then you can use this:
+  @startuml
+  A -> B
+  @enduml
+
+  Otherwise you can include an image with this line:
+
+  ![Some image](doc/a.png)
+-->
+
+@section remarks Remarks and suggestions
+
+Any remarks, suggestions or things that you like to point out?
+
+*/

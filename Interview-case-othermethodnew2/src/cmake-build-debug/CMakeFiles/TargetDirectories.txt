@@ -1,0 +1,3 @@
+/home/flickers/Desktop/Interview-case-othermethodnew2/src/cmake-build-debug/CMakeFiles/Interview-case.dir
+/home/flickers/Desktop/Interview-case-othermethodnew2/src/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/flickers/Desktop/Interview-case-othermethodnew2/src/cmake-build-debug/CMakeFiles/rebuild_cache.dir
